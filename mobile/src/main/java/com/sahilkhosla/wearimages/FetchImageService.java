@@ -30,7 +30,11 @@ public class FetchImageService extends IntentService {
     private GoogleApiClient mGoogleApiClient;
 
     //TODO: add 1 or more image urls here
-    private static final String[] urls = {};
+    private static final String[] urls = {
+        "http://vignette3.wikia.nocookie.net/goanimate-v2/images/7/77/Mrhappy0902_468x442.jpg",
+        "http://caprisunminions.com/themes/minions2015/img/footer-dave.png",
+        "http://images.sodahead.com/polls/002424213/494738859_TickleMeYouIcon512_xlarge.png"
+    };
 
     public FetchImageService() {
         super("FetchImageService");
@@ -49,6 +53,13 @@ public class FetchImageService extends IntentService {
         if (bitmap == null) {
             //return default bitmap stored on device
             bitmap = ((BitmapDrawable) getResources().getDrawable(R.drawable.violin)).getBitmap();
+
+            try {
+                Log.d(TAG, "Sleeping for 1 second...");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
         //publish result, once image is downloaded
@@ -87,6 +98,8 @@ public class FetchImageService extends IntentService {
             int randomIndex = new Random().nextInt(max - min + 1) + min;
             url =  urls[randomIndex];
         }
+
+        Log.d(TAG, "Image url: " + url);
 
         return url;
     }
