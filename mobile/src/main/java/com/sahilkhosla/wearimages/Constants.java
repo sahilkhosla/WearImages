@@ -6,5 +6,6 @@ package com.sahilkhosla.wearimages;
 public class Constants {
 
     public static final String TAG = "WILT"; //Wear Image Log Tag
+    public static final String WEAR_MESSAGE_PATH = "/image";
 
 }
