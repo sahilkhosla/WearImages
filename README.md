@@ -17,3 +17,6 @@ This sample uses the Gradle build system. To build this project, use the "gradle
  - Add 1 or more image URLs [here][4] 
  - Install mobile and wear apps
 
+# Demo
+![Demo](https://cloud.githubusercontent.com/assets/1442016/11321112/b44f5f94-9077-11e5-991f-472f181d27d5.gif
+)
